@@ -15,29 +15,31 @@ public class Parenthesis {
         }
         scanner.close();
 
-        for(int i = 0; i < N ;i++){
-            boolean flag = true;
+        for(String string : stringArray){
             Stack<Integer> stack = new Stack<Integer>();
-            char[] charArray = stringArray[i].toCharArray();
+            boolean flag = true;
             int x = 0;
             int y = 0;
-            for( char a : charArray){
-                if(a == '('){
+
+            char[] charArray = string.toCharArray();
+
+            for( char a : charArray) {
+                if (a == '(') {
                     stack.push(1);
                     x++;
                 }
-                if(a == ')'){
+                if (a == ')') {
                     y++;
                     try {
                         stack.pop();
-                    } catch (Exception e){
-                        flag=false;
+                    } catch (Exception e) {
+                        flag = false;
                         break;
                     }
                 }
             }
-            if(x!=y)System.out.println("NO");
             if(x==y&&flag) System.out.println("YES");
+            else System.out.println("NO");
         }
     }
 }
