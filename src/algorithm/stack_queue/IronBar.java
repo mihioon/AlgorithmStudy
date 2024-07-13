@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.stack_queue;
 
 import java.util.Scanner;
 
