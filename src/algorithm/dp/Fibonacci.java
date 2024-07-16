@@ -13,25 +13,15 @@ public class Fibonacci {
         int n = sc.nextInt();
         sc.close();
 
-        if(n == 0){
-            System.out.println(0);
-            return;
+        long[] fibo = new long[n + 1];
+
+        fibo[1] = 1;
+
+        for (int i = 2; i <= n; i++) {
+            fibo[i] = fibo[i - 1] + fibo[i - 2];
         }
-        if(n == 1){
-            System.out.println(1);
-            return;
-        }
-        int first = 0;
-        int second = 1;
-        int order = 2;
-        int nthNum = 0;
-        while ( order <= n ) {
-            nthNum = first+second;
-            first=second;
-            second=nthNum;
-            order++;
-        }
-        System.out.println(nthNum);
+
+        System.out.println(fibo[n]);
         long end = System.currentTimeMillis();
         System.out.println("수행시간: " + (end - start) + " ms");
     }
