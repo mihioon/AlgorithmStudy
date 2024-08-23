@@ -12,6 +12,7 @@ public class NAndM {
         generateCombinations(n, m, 0, 1, combination);
     }
 
+    //
     public static void generateCombinations(int n, int m, int depth, int start, int[] combination) {
         if (depth == m) {
             for (int i = 0; i < m; i++) {
